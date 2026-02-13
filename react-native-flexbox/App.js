@@ -4,8 +4,14 @@
 //   return <Flex />;
 // }
 
-import FlexDirection from "./components/FlexDirection";
+// import FlexDirection from "./components/FlexDirection";
+
+// export default function App() {
+//   return <FlexDirection />;
+// }
+
+import LayoutDirection from "./components/LayoutDirection";
 
 export default function App() {
-  return <FlexDirection />;
+  return <LayoutDirection />;
 }
