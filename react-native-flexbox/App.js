@@ -16,8 +16,14 @@
 //   return <LayoutDirection />;
 // }
 
-import JustifyContent from "./components/JustifyContent";
+// import JustifyContent from "./components/JustifyContent";
+
+// export default function App() {
+//   return <JustifyContent />;
+// }
+
+import AlignItems from "./components/AlignItems";
 
 export default function App() {
-  return <JustifyContent />;
+  return <AlignItems />;
 }
