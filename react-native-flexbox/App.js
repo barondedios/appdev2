@@ -10,8 +10,14 @@
 //   return <FlexDirection />;
 // }
 
-import LayoutDirection from "./components/LayoutDirection";
+// import LayoutDirection from "./components/LayoutDirection";
+
+// export default function App() {
+//   return <LayoutDirection />;
+// }
+
+import JustifyContent from "./components/JustifyContent";
 
 export default function App() {
-  return <LayoutDirection />;
+  return <JustifyContent />;
 }
