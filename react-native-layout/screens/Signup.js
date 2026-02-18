@@ -15,7 +15,6 @@ export default function Signup({ navigation }) {
 
         <Text style={styles.title}>Create Account</Text>
 
-        {/* Full Name */}
         <View style={styles.inputContainer}>
           <Ionicons name="person-outline" size={20} color="#666" />
           <TextInput
@@ -24,7 +23,6 @@ export default function Signup({ navigation }) {
           />
         </View>
 
-        {/* Email */}
         <View style={styles.inputContainer}>
           <Ionicons name="mail-outline" size={20} color="#666" />
           <TextInput
@@ -34,7 +32,6 @@ export default function Signup({ navigation }) {
           />
         </View>
 
-        {/* Password */}
         <View style={styles.inputContainer}>
           <Ionicons name="lock-closed-outline" size={20} color="#666" />
           <TextInput
@@ -44,7 +41,6 @@ export default function Signup({ navigation }) {
           />
         </View>
 
-        {/* Confirm Password */}
         <View style={styles.inputContainer}>
           <Ionicons name="lock-closed-outline" size={20} color="#666" />
           <TextInput
@@ -54,13 +50,11 @@ export default function Signup({ navigation }) {
           />
         </View>
 
-        {/* Sign Up Button */}
         <TouchableOpacity style={styles.button}>
           <Ionicons name="person-add-outline" size={20} color="#fff" />
           <Text style={styles.buttonText}> Sign Up</Text>
         </TouchableOpacity>
 
-        {/* Navigate Back to Login */}
         <TouchableOpacity onPress={() => navigation.navigate('Login')}>
           <Text style={styles.link}>
             Already have an account? Login
@@ -71,8 +65,6 @@ export default function Signup({ navigation }) {
     </SafeAreaView>
   );
 }
-
-/* ================= STYLES ================= */
 
 const styles = StyleSheet.create({
   container: {

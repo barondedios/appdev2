@@ -1,49 +1,69 @@
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  SafeAreaView,
+} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function Login({ navigation }) {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.innerContainer}>
 
-      <Image
-        source={require('../assets/images/login.png')}
-        style={styles.image}
-      />
+        <Image
+          source={require('../assets/images/login.png')}
+          style={styles.image}
+        />
 
-      <Text style={styles.title}>Welcome Back</Text>
+        <Text style={styles.title}>Welcome Back</Text>
 
-      {/* Email */}
-      <View style={styles.inputContainer}>
-        <Ionicons name="mail-outline" size={20} color="#555" style={styles.icon} />
-        <TextInput placeholder="Email" style={styles.input} />
+        <View style={styles.inputContainer}>
+          <Ionicons name="mail-outline" size={20} color="#666" />
+          <TextInput
+            placeholder="Email"
+            style={styles.input}
+            keyboardType="email-address"
+          />
+        </View>
+
+        <View style={styles.inputContainer}>
+          <Ionicons name="lock-closed-outline" size={20} color="#666" />
+          <TextInput
+            placeholder="Password"
+            secureTextEntry
+            style={styles.input}
+          />
+        </View>
+
+        <TouchableOpacity style={styles.button}>
+          <Ionicons name="log-in-outline" size={20} color="#fff" />
+          <Text style={styles.buttonText}> Login</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+          <Text style={styles.link}>
+            Don't have an account? Sign up
+          </Text>
+        </TouchableOpacity>
+
       </View>
-
-      {/* Password */}
-      <View style={styles.inputContainer}>
-        <Ionicons name="lock-closed-outline" size={20} color="#555" style={styles.icon} />
-        <TextInput placeholder="Password" secureTextEntry style={styles.input} />
-      </View>
-
-      {/* Login Button */}
-      <TouchableOpacity style={styles.button}>
-        <Ionicons name="log-in-outline" size={20} color="white" />
-        <Text style={styles.buttonText}> Login</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
-        <Text style={styles.link}>Don't have an account? Sign up</Text>
-      </TouchableOpacity>
-
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#f4f6f8',
+  },
+  innerContainer: {
+    flex: 1,
     justifyContent: 'center',
-    padding: 20,
-    backgroundColor: '#fff',
+    padding: 25,
   },
   image: {
     width: 200,
@@ -61,30 +81,28 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#ccc',
+    backgroundColor: '#fff',
     borderRadius: 8,
-    paddingHorizontal: 10,
+    paddingHorizontal: 12,
     marginBottom: 15,
-  },
-  icon: {
-    marginRight: 8,
+    elevation: 2,
   },
   input: {
     flex: 1,
-    paddingVertical: 10,
+    paddingVertical: 12,
+    marginLeft: 8,
   },
   button: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#007bff',
-    padding: 12,
+    padding: 14,
     borderRadius: 8,
     marginTop: 10,
   },
   buttonText: {
-    color: 'white',
+    color: '#fff',
     fontWeight: 'bold',
   },
   link: {
