@@ -22,8 +22,26 @@
 //   return <JustifyContent />;
 // }
 
-import AlignItems from "./components/AlignItems";
+// import AlignItems from "./components/AlignItems";
+
+// export default function App() {
+//   return <AlignItems />;
+// } 
+
+import AlignSelf from "./components/AlignSelf";
 
 export default function App() {
-  return <AlignItems />;
+  return <AlignSelf />;
 }
+
+// import AlignContent from "./components/AlignContent";
+
+// export default function App() {
+//   return <AlignContent />;
+// }
+
+// import FlexWrap from "./components/FlexWrap";
+
+// export default function App() {
+//   return <FlexWrap />;
+// }
