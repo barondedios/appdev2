@@ -5,7 +5,7 @@ import HomeScreen from "./screens/HomeScreen";
 import DetailsScreen from "./screens/DetailsScreen";
 
 export type RootStackParamList = {
-  Home: { message?: string } | undefined;
+  Home: undefined;
   Details: { name?: string };
 };
 
@@ -15,23 +15,23 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        
-        {/* HOME SCREEN */}
+
+        {/* HOME */}
         <Stack.Screen
           name="Home"
           component={HomeScreen}
           options={{
-            title: "Welcome Home",
-            headerStyle: { backgroundColor: "#6200ee" },
-            headerTintColor: "#fff",
+            title: "Home Screen",
           }}
         />
 
-        {/* DETAILS SCREEN */}
+        {/* DETAILS WITH INITIAL PARAMS */}
         <Stack.Screen
           name="Details"
           component={DetailsScreen}
-          initialParams={{ name: "Default User" }}
+          initialParams={{
+            name: "Default User"
+          }}
           options={{
             title: "Details Page",
           }}
