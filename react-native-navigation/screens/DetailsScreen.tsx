@@ -1,17 +1,22 @@
 import { View, Text, Button } from "react-native";
 
-export default function DetailsScreen({ route, navigation }: any) {
+export default function DetailsScreen({ navigation, route }: any) {
   const { name } = route.params;
 
   return (
     <View>
+      <Text>Details Screen</Text>
       <Text>Hello {name}</Text>
 
-      {/* UPDATE PARAMS */}
+      {/* PASS PARAMS BACK TO HOME SCREEN */}
       <Button
-        title="Update Name"
+        title="Send Message Back to Home"
         onPress={() =>
-          navigation.setParams({ name: "Updated Baron" })
+          navigation.navigate({
+            name: "Home",
+            params: { message: "Hello from Details Screen!" },
+            merge: true,
+          })
         }
       />
     </View>
