@@ -7,6 +7,11 @@ export default function HomeScreen({ navigation }: any) {
         title="Go to Details"
         onPress={() => navigation.navigate("Details")}
       />
+
+      <Button
+        title="Push Details Again"
+        onPress={() => navigation.push("Details")}
+      />
     </View>
   );
 }
