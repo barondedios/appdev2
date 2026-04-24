@@ -1,14 +1,12 @@
-import { View, Button, Text } from "react-native";
+import { View, Text } from "react-native";
 
-export default function DetailsScreen({ navigation }: any) {
+export default function DetailsScreen({ route }: any) {
+  const { name } = route.params;
+
   return (
     <View>
       <Text>Details Screen</Text>
-
-      <Button
-        title="Go Back"
-        onPress={() => navigation.goBack()}
-      />
+      <Text>Hello {name}</Text>
     </View>
   );
 }
