@@ -5,17 +5,10 @@ export default function HomeScreen({ navigation }: any) {
     <View>
       <Text>Home Screen</Text>
 
-      {/* NORMAL NAVIGATION */}
       <Button
-        title="Go to Details (navigate)"
-        onPress={() => navigation.navigate("Details", { name: "Baron" })}
-      />
-
-      {/* MULTIPLE INSTANCES (KEY PART OF #9) */}
-      <Button
-        title="Push Details Screen Again"
+        title="Go to Details"
         onPress={() =>
-          navigation.push("Details", { name: "New Instance" })
+          navigation.navigate("Details", { name: "Baron" })
         }
       />
     </View>
