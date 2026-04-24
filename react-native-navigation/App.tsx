@@ -4,10 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
 import DetailsScreen from "./screens/DetailsScreen";
 
-export type RootStackParamList = {
-  Home: undefined;
-  Details: { name?: string };
-};
+import { RootStackParamList } from "./types";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -16,7 +13,6 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
 
-        {/* HOME */}
         <Stack.Screen
           name="Home"
           component={HomeScreen}
@@ -25,15 +21,11 @@ export default function App() {
           }}
         />
 
-        {/* DETAILS WITH INITIAL PARAMS */}
         <Stack.Screen
           name="Details"
           component={DetailsScreen}
-          initialParams={{
-            name: "Default User"
-          }}
           options={{
-            title: "Details Page",
+            title: "Details Screen",
           }}
         />
 
