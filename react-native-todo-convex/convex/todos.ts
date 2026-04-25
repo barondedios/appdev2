@@ -2,15 +2,17 @@ import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
 
 // GET TODOS
-export const getTodos = query({
+export const get = query({
   handler: async (ctx) => {
     return await ctx.db.query("todos").collect();
   },
 });
 
 // ADD TODO
-export const addTodo = mutation({
-  args: { text: v.string() },
+export const add = mutation({
+  args: {
+    text: v.string(),
+  },
   handler: async (ctx, args) => {
     await ctx.db.insert("todos", {
       text: args.text,
@@ -20,8 +22,10 @@ export const addTodo = mutation({
 });
 
 // TOGGLE TODO
-export const toggleTodo = mutation({
-  args: { id: v.id("todos") },
+export const toggle = mutation({
+  args: {
+    id: v.id("todos"),
+  },
   handler: async (ctx, args) => {
     const todo = await ctx.db.get(args.id);
     if (!todo) return;
@@ -33,8 +37,10 @@ export const toggleTodo = mutation({
 });
 
 // DELETE TODO
-export const deleteTodo = mutation({
-  args: { id: v.id("todos") },
+export const remove = mutation({
+  args: {
+    id: v.id("todos"),
+  },
   handler: async (ctx, args) => {
     await ctx.db.delete(args.id);
   },
