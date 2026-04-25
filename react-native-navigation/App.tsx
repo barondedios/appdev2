@@ -8,6 +8,8 @@ import { RootStackParamList } from "./types";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
+//Updated App.tsx
+
 export default function App() {
   return (
     <NavigationContainer>
