@@ -4,10 +4,6 @@ export const seed = mutation({
   args: {},
   handler: async (ctx) => {
     const initialTasks = [
-      "Buy groceries",
-      "Finish React Native tutorial",
-      "Clean the kitchen",
-      "Call mom",
       "Schedule dentist appointment",
       "Fix bug in todo app",
       "Read 10 pages of a book",
